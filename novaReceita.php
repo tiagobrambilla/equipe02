@@ -1,7 +1,7 @@
 <?php 
-include 'conexao.php';
-	$username = "adm";
- 	$bd = mysqli_connect("localhost","root","usbw","eq02");
+include 'validacao.php';
+	$username = $_SESSION['username'];
+ 	$bd = mysqli_connect("localhost","root","","eq02");
 	$descr = $_POST['descr'];
 	$valor = $_POST['valor'];
 	$result = mysqli_query($bd, "select id_atividade from atividade where username = '$username'");
@@ -11,7 +11,7 @@ include 'conexao.php';
 
 	mysqli_query($bd, $sql);
 
-	header('location:logado.php?mensagem=Dados salvos');
-
+	
+    header('location:logado.php?mensagem=Dados salvos');
 
 ?>

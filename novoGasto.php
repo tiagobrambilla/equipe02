@@ -1,6 +1,7 @@
 <?php 
- 	$bd = mysqli_connect("localhost","root","usbw","eq02");
- 	$username = "adm";
+    include 'validacao.php';
+ 	$bd = mysqli_connect("localhost","root","","eq02");
+ 	$username = $_SESSION['username'];
 	$descr = $_POST['descr'];
 	$tipo = $_POST['tipo'];
 	$valor = $_POST['valor'];
@@ -11,7 +12,8 @@
 	
 	mysqli_query($bd, $sql);
 
-	
+	header('location: logado.php?mensagem=Dados salvos');
+    
 
 
 ?>

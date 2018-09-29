@@ -43,7 +43,7 @@ include 'conexao.php';
                         header("location:index.php");
                     }else{
                             $aspa = '"';
-                        echo "<button disabled class='btn btn-light'>".nome($bd, "select nome from login where username = '$username'")."</button>&nbsp;<button class='btn btn-primary' onclick=".$aspa."location.href='logoff.php'".$aspa.">Sair</button>";
+                        echo "<spam style='color:white;'>".nome($bd, "select nome from login where username = '$username'")."</spam>&nbsp;&nbsp;&nbsp;<button class='btn btn-primary' onclick=".$aspa."location.href='logoff.php'".$aspa.">Sair</button>";
                     }
                     ?>
                 </div>
@@ -61,7 +61,7 @@ include 'conexao.php';
                 Data de inicio: <input type="date" name="data_inicial"><br>
                 Lucro Esperado: <input type="number" name="lucro_esperado"><br>
                 <button onclick="">cancelar</button><input type="submit" name="salvar"><br>
-                <p style="color: green"><?php echo $msg; echo $_SESSION["username"]; ?></p>
+                <p style="color: green"><?php echo $msg; ?></p>
                 
             </form>
         </div>
