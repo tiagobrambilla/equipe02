@@ -1,10 +1,16 @@
 <?php
-include_once("conexao.php");
+
 
 function criaTabela() {
 	$username = "adm";
 	$sql = "select descr, inv_inicial, data_inicial, data_final, lucro_esperado from atividade";
-	$resultado = mysqli_query($sql, $bd);
-	echo "$resultado";
+	$bd = mysqli_connect("localhost","root","usbw","eq02") or die("Not connected.");
+	$resultado = mysqli_query($bd, $sql);
+	 while($aux = mysqli_fetch_assoc($resultado)) { 
+	 
+	 echo "<tr><td>".$aux['descr']."&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  </td><td> Iniciado em:".$aux['data_inicial']." </td><td> &nbsp;&nbsp;&nbsp;&nbsp;Investimento inicial:<spam style='color:red;'> R$".$aux['inv_inicial']."</spam></td></tr>";
+	  }
+
 }
+
 ?>
