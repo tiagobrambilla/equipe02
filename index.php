@@ -63,12 +63,12 @@
                 <div class="row">
                     <div class="col-lg-8 mx-auto">
                         <h2>Sobre</h2>
-                        <p class="lead">This is a great place to talk about your webpage. This template is purposefully unstyled so you can use it as a boilerplate or starting point for you own landing page designs! This template features:</p>
+                        <p class="lead">O Software de Gestão Agrícola é um sistema que tem como objetivo a organização  econômica de propriedades agrícolas de pequeno, médio e grande porte. Através do nosso sistema é possível aumentar o controle dos custos de produção, ter facilidade no planejamento e controle de safras, evitar desperdícios, aumentar a produtividade e otimizar resultados.</p>
                         <ul>
-                            <li>Clickable nav links that smooth scroll to page sections</li>
-                            <li>Responsive behavior when clicking nav links perfect for a one page website</li>
-                            <li>Bootstrap's scrollspy feature which highlights which section of the page you're on in the navbar</li>
-                            <li>Minimal custom CSS so you are free to explore your own unique design options</li>
+                            <li>Registre com agilidade as atividades da lavoura</li>
+                            <li>Registre com precisão as despesas e receitas</li>
+                            <li>Armaze com segurança seu histórico financeiro e de produção</li>
+                            <li>Acesse de qualquer lugar todas suas informações</li>
                         </ul>
                     </div>
                 </div>
@@ -79,7 +79,7 @@
         <!-- Footer -->
         <footer style="background-image: url('img/agro0.jpg');" class="py-5 bg-dark">
             <div class="container">
-                <p class="m-0 text-center text-white">Copyright &copy; Your Website 2017</p>
+                <p class="m-0 text-center text-white">Copyright &copy;Equipe 02 | Hackathon FW 2018</p>
             </div>
             <!-- /.container -->
         </footer>
