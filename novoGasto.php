@@ -12,7 +12,7 @@
 	
 	mysqli_query($bd, $sql);
 
-	header('location: logado.php?mensagem=Dados salvos');
+	header('location: logado.php?mensagem=Dados Salvos');
     
 
 

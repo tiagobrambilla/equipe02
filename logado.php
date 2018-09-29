@@ -52,62 +52,76 @@ include 'conexao.php';
             </div>
         </nav>
         
-        
+        <center>
         <div style="margin-top: 2%;">
-            <br><br><a href="#novaAtividade"> <button  class='btn btn-outline-success my-0 my-sm-0' style=" margin-left: 50px; " ><img src="img/mais.png" width="20px"> &nbsp;Nova Atividade</button></a>
+            <br><br><a href="#novaAtividade"> <button  class='btn btn-outline-success my-0 my-sm-0'  ><img src="img/mais.png" width="20px"> &nbsp;Nova Atividade</button></a>
             
-            <a href="#novoGasto"> <button  class='btn btn-outline-success my-0 my-sm-0' style=" margin-left: 50px; " ><img src="img/mais.png" width="20px"> &nbsp;Novo Gasto</button></a>
+            <a href="#novoGasto"> <button  class='btn btn-outline-success my-0 my-sm-0' style=" margin-left: 10px; " ><img src="img/mais.png" width="20px"> &nbsp;Novo Gasto</button></a>
             
-            <a href="#novaReceita"> <button  class='btn btn-outline-success my-0 my-sm-0' style=" margin-left: 50px; " ><img src="img/mais.png" width="20px"> &nbsp;Nova Receita</button></a>
+            <a href="#novaReceita"> <button  class='btn btn-outline-success my-0 my-sm-0' style=" margin-left: 10px; " ><img src="img/mais.png" width="20px"> &nbsp;Nova Receita</button></a>
         </div>
-        
+        </center>
+        <center>
         <div style="max-height: 100%; margin: 1%;" id="tabela" ><table><?php echo criaTabela(); ?></table></div>
         
         
         <div class="atividade" id="novaAtividade">
             <div class="atv">
+                <center>
+                <fieldset style = "width: 35%; margin-left: 5%; margin-top: 5%;">
                 <form action="novaAtividade.php" method="post">
-                    Descrição da atividade: <input type="text" name="descr"><br>
-                    Investimento inicial: <input type="number" name="inv_inicial"><br>
-                    Data de inicio: <input type="date" name="data_inicial"><br>
-                    Lucro Esperado: <input type="number" name="lucro_esperado"><br>
-                    <button onclick="">cancelar</button><input type="submit" name="salvar"><br>
-                    <p style="color: green"><?php echo $msg; ?></p>
+                    <h5>Descrição da atividade:</h5> <input class="form-control" type="text" name="descr"><br>
+                    <h5>Investimento inicial:</h5> <input class="form-control" type="number" name="inv_inicial"><br>
+                    <h5>Data de inicio:</h5> <input class="form-control" type="date" name="data_inicial"><br>
+                    <h5>Lucro Esperado:</h5> <input class="form-control" type="number" name="lucro_esperado"><br>
+                    <button class="btn btn-danger" onclick="">cancelar</button>&nbsp;<input class="btn btn-success" type="submit" name="salvar"><br>
+                    <p style="color: green; margin-top: 2%;"><?php echo $msg; ?></p>
                     
                 </form>
+                    
+                </fieldset>
+                    </center>
             </div>
         </div>
         <div class="gasto" id="novoGasto">
             <div class="gst">
+                <center>
+                <fieldset style = "width: 35%; margin-left: 5%; margin-top: 5%;">
                 <form action="novoGasto.php" method="post">
-                    Descrição do gasto: <input type="text" name="descr"><br>
-                    Tipo do gasto: <select name="tipo">
+                    <h5>Descrição do gasto:</h5> <input class="form-control" type="text" name="descr"><br>
+                    <h5>Tipo do gasto:</h5> <select class="form-control" name="tipo">
                     <option value="adubos">Adubos</option>
                     <option value="contr">Contratação de serviços</option>
                     <option value="def_agri">Defensivos agricolas</option>
                     <option value="manutencao">Manutenção</option>
                     <option value="outros">Outros</option>
                     </select> <br>
-                    Valor: <input type="number" name="valor"><br>
-                    <button onclick="">cancelar</button><input type="submit" name="salvar"><br>
-                    <p style="color: green"><?php echo $msg; ?></p>
+                    <h5>Valor:</h5> <input class="form-control" type="number" name="valor"><br>
+                    <button class="btn btn-danger" onclick="">cancelar</button>&nbsp;<input class="btn btn-success" type="submit" name="salvar"><br>
+                    <p style="color: green; margin-top: 2%;"><?php echo $msg; ?></p>
                     
                 </form>
+                    </fieldset>
+                </center>
             </div>
         </div>
         <div class="receita" id="novaReceita">
             <div class="rct">
+                <center>
+                <fieldset style = "width: 35%; margin-left: 5%; margin-top: 5%;">
                 <form action="novaReceita.php" method="post">
-                    Descrição da receita: <input type="text" name="descr"><br>
-                    Valor: <input type="number" name="valor"><br>
-                    <button onclick="">cancelar</button><input type="submit" name="salvar"><br>
-                    <p style="color: green"><?php echo $msg; ?></p>
+                    <h5>Descrição da receita:</h5> <input class="form-control" type="text" name="descr"><br>
+                    <h5>Valor:</h5> <input class="form-control" type="number" name="valor"><br>
+                    <button class="btn btn-danger" onclick="">cancelar</button>&nbsp;<input class="btn btn-success" type="submit" name="salvar"><br>
+                    <p style="color: green; margin-top: 2%;"><?php echo $msg; ?></p>
                     
                 </form>
+                    </fieldset>
+                </center>
             </div>
         </div>
         
-        
+        </center>
     </body>
 
 </html>
