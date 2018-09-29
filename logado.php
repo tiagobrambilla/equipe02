@@ -59,66 +59,29 @@ include 'conexao.php';
         </div>
         
         <center>
-        <div style="max-height: 100%; margin: 1%;" id="tabela" ><table style="width: 100%;" class="table"><?php echo criaTabela(); ?></table></div>
-        
-        
-        <div class="atividade" id="novaAtividade">
-            <div class="atv">
-                <center>
-                <fieldset style = "width: 35%; margin-left: 5%; margin-top: 5%;">
-                <form action="novaAtividade.php" method="post">
-                    <h5>Descrição da atividade:</h5> <input class="form-control" type="text" name="descr"><br>
-                    <h5>Investimento inicial:</h5> <input class="form-control" type="number" name="inv_inicial"><br>
-                    <h5>Data de inicio:</h5> <input class="form-control" type="date" name="data_inicial"><br>
-                    <h5>Lucro Esperado:</h5> <input class="form-control" type="number" name="lucro_esperado"><br>
-                    <button class="btn btn-danger" onclick="">Cancelar</button>&nbsp;<input class="btn btn-success" type="submit" name="salvar"><br>
-                    <p style="color: green; margin-top: 2%;"><?php echo $msg; ?></p>
-                    
-                </form>
-                    
-                </fieldset>
+            <div style="max-height: 100%; margin: 1%;" id="tabela" ><table style="width: 100%;" class="table"><?php echo criaTabela1(); ?></table></div>
+            
+            
+            <div class="atividade" id="novaAtividade">
+                <div class="atv">
+                    <center>
+                        <fieldset style = "width: 35%; margin-left: 5%; margin-top: 5%;">
+                            <form action="novaAtividade.php" method="post">
+                                
+                                <h5>Descrição da atividade:</h5> <input class="form-control" type="text" name="descr"><br>
+                                <h5>Investimento inicial:</h5> <input class="form-control" type="number" name="inv_inicial"><br>
+                                <h5>Data de inicio:</h5> <input class="form-control" type="date" name="data_inicial"><br>
+                                <h5>Lucro Esperado:</h5> <input class="form-control" type="number" name="lucro_esperado"><br>
+                                <button class="btn btn-danger" onclick="">Cancelar</button>&nbsp;<input class="btn btn-success" type="submit" name="salvar"><br>
+                                <p style="color: green; margin-top: 2%;"><?php echo $msg; ?></p>
+                                
+                            </form>
+                        </fieldset>
+                        
                     </center>
+                </div>
             </div>
-        </div>
-        <div class="gasto" id="novoGasto">
-            <div class="gst">
-                <center>
-                <fieldset style = "width: 35%; margin-left: 5%; margin-top: 5%;">
-                <form action="novoGasto.php" method="post">
-                    <h5>Descrição do gasto:</h5> <input class="form-control" type="text" name="descr"><br>
-                    <h5>Tipo do gasto:</h5> <select class="form-control" name="tipo">
-                    <option value="adubos">Adubos</option>
-                    <option value="contr">Contratação de serviços</option>
-                    <option value="def_agri">Defensivos agricolas</option>
-                    <option value="manutencao">Manutenção</option>
-                    <option value="outros">Outros</option>
-                    </select> <br>
-                    <h5>Valor:</h5> <input class="form-control" type="number" name="valor"><br>
-                    <button class="btn btn-danger" onclick="">Cancelar</button>&nbsp;<input class="btn btn-success" type="submit" name="salvar"><br>
-                    <p style="color: green; margin-top: 2%;"><?php echo $msg; ?></p>
-                    
-                </form>
-                    </fieldset>
-                </center>
-            </div>
-        </div>
-        <div class="receita" id="novaReceita">
-            <div class="rct">
-                <center>
-                <fieldset style = "width: 35%; margin-left: 5%; margin-top: 5%;">
-                <form action="novaReceita.php" method="post">
-                    <h5>Descrição da receita:</h5> <input class="form-control" type="text" name="descr"><br>
-                    <h5>Valor:</h5> <input class="form-control" type="number" name="valor"><br>
-                    <button class="btn btn-danger" onclick="">Cancelar</button>&nbsp;<input class="btn btn-success" type="submit" name="salvar"><br>
-                    <p style="color: green; margin-top: 2%;"><?php echo $msg; ?></p>
-                    
-                </form>
-                    </fieldset>
-                </center>
-            </div>
-        </div>
-        
         </center>
     </body>
-
+    
 </html>

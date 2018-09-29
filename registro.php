@@ -1,5 +1,5 @@
 <?php
-include_once("validacao.php");
+
 include_once("conexao.php");
 
 $mensagem = "";
@@ -84,6 +84,8 @@ else {
         }
     }
 }
+
+ 
 ?>
 
 <html>
@@ -128,8 +130,7 @@ else {
                     <input type="submit" name="acao" class="btn btn-primary" value="<?php echo $descr_acao; ?>">
                 </form>
             </fieldset>
-            <br><br>
-        
+           
             <br>
             <?php echo $mensagem ?>
         </center>
