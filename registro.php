@@ -108,7 +108,7 @@ else {
             <div class="container">
                 
                 <a style="margin-left: -8%;" class="navbar-brand" href="index.php"><button title="Início" type="button" style="height: 60px; width: 80px; padding-top: 0px" class="btn btn-light btn-lg"><img src="img/home.png"><p>Voltar</p></button></a> 
-                <a style="margin-right: 38%;" class="navbar-brand js-scroll-trigger" href="#page-top">Software de Gestão Agrícola</a>
+                <a style="margin-right: 39%;" class="navbar-brand js-scroll-trigger" href="#page-top">Software de Gestão Agrícola</a>
             </div>
         </nav>
         
@@ -116,16 +116,16 @@ else {
         <center>
             <h3>CADASTRO DE USUÁRIOS</h3>
             
-            <fieldset class="fieldcad1">
+            <fieldset style = "width: 25%; margin: 0px auto; margin-top: 10%;">
                 <legend><h5>DADOS DO USUÁRIO</h5></legend>
                 
                 <form action="registro.php" method="post">
-                    Login <input class="form-control" type="text" name="username" value="<?php echo $username; ?>"><br><br>
-                    Nome <input class="form-control" type="text" name="nome" value="<?php echo $nome; ?>"><br><br>
-                    Senha <input class="form-control" type="password" name="password" value="<?php echo $password; ?>"><br><br>
-                    <br><br>
-                    <input type="submit" class="cadbotao" value="LIMPAR">
-                    <input type="submit" name="acao" class="cadbotao" value="<?php echo $descr_acao; ?>">
+                    <h5>Login</h5> <input class="form-control" type="text" name="username" value="<?php echo $username; ?>"><br>
+                    <h5>Nome</h5> <input class="form-control" type="text" name="nome" value="<?php echo $nome; ?>"><br>
+                    <h5>Senha</h5> <input class="form-control" type="password" name="password" value="<?php echo $password; ?>"><br>
+        
+                    <input type="submit" class="btn btn-primary" value="LIMPAR">
+                    <input type="submit" name="acao" class="btn btn-primary" value="<?php echo $descr_acao; ?>">
                 </form>
             </fieldset>
             <br><br>

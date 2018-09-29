@@ -4,7 +4,7 @@
 function criaTabela() {
 	$username = "adm";
 	$sql = "select descr, inv_inicial, data_inicial, data_final, lucro_esperado from atividade";
-	$bd = mysqli_connect("localhost","root","usbw","eq02") or die("Not connected.");
+	$bd = mysqli_connect("localhost","root","","eq02") or die("Not connected.");
 	$resultado = mysqli_query($bd, $sql);
 	 while($aux = mysqli_fetch_assoc($resultado)) { 
 	 
@@ -12,5 +12,20 @@ function criaTabela() {
 	  }
 
 }
+ function nome($bd, $sql) {
+       $nome = "";
+        
+        $resultado = mysqli_query($bd, $sql);
+       
+           
+         while($dados = mysqli_fetch_assoc($resultado)) {
+          $nome = $nome.$dados["nome"];
+      }
+                
+               
+        
+        
+        return $nome;
+    }
 
 ?>

@@ -3,10 +3,10 @@
   session_start();
 
   
-  if ( ! isset( $_SESSION["login"] ) )
+  if ( ! isset( $_SESSION["username"] ) )
      header("location: index.php");
 
 
-  $login = $_SESSION["login"];
+  $username = $_SESSION["username"];
 	
 ?>

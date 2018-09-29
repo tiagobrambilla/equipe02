@@ -43,10 +43,10 @@ if ( isset( $_GET["mensagem"] ) )
             <fieldset style = "width: 25%; margin: 0px auto; margin-top: 10%;">
                 <legend><h5>IDENTIFIQUE-SE</h5></legend>
                 <h5>Login</h5>
-                <input class="form-control" type="text" name="login">
+                <input class="form-control" type="text" name="username">
                 <br>
                 <h5>Senha</h5>
-                <input class="form-control" type="password" name="senha">
+                <input class="form-control" type="password" name="password">
                 <br>
                 <input style="width: 100%;" class="btn btn-primary" type="submit" value="Login">
             </fieldset>
