@@ -57,12 +57,12 @@ include 'conexao.php';
      <div style="margin-top: 10%;">
      	<table style="width: 30%;" class="table table-striped">
      		<tr><td><h5>Tipo</h5></td><td><h5>Valor Total</h5></td></tr>
-     		<tr><td><b>Adubos</b></td><td>R$<?php echo consulta("select valor from gasto, atividade, login where gasto.id_atividade = atividade.id_atividade and login.username = atividade.username and tipo = 'adubos';")?>,00</td></tr>
-     		<tr><td><b>Contratação de Serviços</b></td><td>R$<?php echo consulta("select valor from gasto, atividade, login where gasto.id_atividade = atividade.id_atividade and login.username = atividade.username and tipo = 'contr';")?>,00</td></tr>
-     		<tr><td><b>Defensivos Agricolas</b></td><td>R$<?php echo consulta("select valor from gasto, atividade, login where gasto.id_atividade = atividade.id_atividade and login.username = atividade.username and tipo = 'def_agri';")?>,00</td></tr>
-     		<tr><td><b>Manutenção</b></td><td>R$<?php echo consulta("select valor from gasto, atividade, login where gasto.id_atividade = atividade.id_atividade and login.username = atividade.username and tipo = 'manutencao';")?>,00</td></tr>
-     		<tr><td><b>Investimento</b></td><td>R$<?php echo consulta("select valor from gasto, atividade, login where gasto.id_atividade = atividade.id_atividade and login.username = atividade.username and tipo = 'invest';")?>,00</td></tr>
-     		<tr><td><b>Outros</b></td><td>R$<?php echo consulta("select valor from gasto, atividade, login where gasto.id_atividade = atividade.id_atividade and login.username = atividade.username and tipo = 'outros';")?>,00</td></tr>
+     		<tr><td><b>Adubos</b></td><td>R$<?php echo consulta("select valor from gasto, atividade, login where gasto.id_atividade = atividade.id_atividade and login.username = atividade.username and tipo = 'adubos' and login.username = '$username';")?>,00</td></tr>
+     		<tr><td><b>Contratação de Serviços</b></td><td>R$<?php echo consulta("select valor from gasto, atividade, login where gasto.id_atividade = atividade.id_atividade and login.username = atividade.username and tipo = 'contr' and login.username = '$username';")?>,00</td></tr>
+     		<tr><td><b>Defensivos Agricolas</b></td><td>R$<?php echo consulta("select valor from gasto, atividade, login where gasto.id_atividade = atividade.id_atividade and login.username = atividade.username and tipo = 'def_agri'  and login.username = '$username';")?>,00</td></tr>
+     		<tr><td><b>Manutenção</b></td><td>R$<?php echo consulta("select valor from gasto, atividade, login where gasto.id_atividade = atividade.id_atividade and login.username = atividade.username and tipo = 'manutencao' and login.username = '$username';")?>,00</td></tr>
+     		<tr><td><b>Investimento</b></td><td>R$<?php echo consulta("select valor from gasto, atividade, login where gasto.id_atividade = atividade.id_atividade and login.username = atividade.username and tipo = 'invest' and login.username = '$username';")?>,00</td></tr>
+     		<tr><td><b>Outros</b></td><td>R$<?php echo consulta("select valor from gasto, atividade, login where gasto.id_atividade = atividade.id_atividade and login.username = atividade.username and tipo = 'outros' and login.username = '$username';")?>,00</td></tr>
      	</table>
         
 </div>

@@ -38,7 +38,14 @@ else {
             $descr_acao = "CADASTRAR";
         } else{
             $descr_acao = "CADASTRAR";
-            $mensagem = "<p style='color: green;'>Cadastro efetuado com sucesso!</p><br>";
+            $mensagem = "Cadastro efetuado com sucesso!";
+            
+            #header('location: logado.php?mensagem=Cadastro efetuado com sucesso!');
+            
+            echo "<SCRIPT type='text/javascript'> //not showing me this
+            alert('Cadastro efetuado com sucesso!');
+            window.location.replace(\"index.php\");
+            </SCRIPT>";
         }
     }
     

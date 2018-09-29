@@ -57,7 +57,7 @@ include 'conexao.php';
             
         
         
-        <a href="consultas.php" style="float: right; margin-right: 2.7%;"> <button  class='btn btn-outline-success my-0 my-sm-0'  ><img src="img/mais.png" width="20px"> &nbsp;Outras Consultas</button></a></div>
+        <a href="consultas.php" style="float: right; margin-right: 2.7%;"> <button  class='btn btn-outline-success my-0 my-sm-0'  ><img src="img/mais.png" width="20px"> &nbsp;Gastos Totais</button></a></div>
         <center>
             <div style="max-height: 100%; margin: 1%;" id="tabela" ><table style="width: 100%;" class="table"><?php echo criaTabela1(); ?></table></div>
             

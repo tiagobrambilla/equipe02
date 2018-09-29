@@ -37,6 +37,7 @@ function nome($bd, $sql) {
 
 function consulta($sql) {
     $soma = 0;
+    $username = $_SESSION['username'];
     $bd = mysqli_connect("localhost","root","","eq02") or die("Not connected.");
     $resultado = mysqli_query($bd, $sql);
     while($aux = mysqli_fetch_assoc($resultado)) { 
