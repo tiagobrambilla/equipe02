@@ -72,7 +72,32 @@ function gasto() {
       }  
        
 }
-
+function criaTabela2() {
+   if (isset($_POST["escon"]))
+       $id_atividade = $_POST["escon"]; 
+    $username = $_SESSION['username'];
+    $sql = "select valor, descr from gasto where id_atividade = $id_atividade";
+    $sql2 = "select valor, descr from receita where id_atividade = $id_atividade";
+    $bd = mysqli_connect("localhost","root","","eq02") or die("Not connected.");
+    $resultado2 = mysqli_query($bd, $sql2);
+    $resultado = mysqli_query($bd, $sql);
+    for($x=0; $x<10; $x++) {
+        echo "<tr>";
+    $aux = mysqli_fetch_assoc($resultado);
+        
+        echo "
+        <td>".$aux['descr']."</td>
+        <td>".$aux['valor']."</td>
+        ";
+       
+      $aux2 = mysqli_fetch_assoc($resultado2);
+        echo "
+          <td>".$aux2['descr']."</td>
+        <td>".$aux2['valor']."</td>";
+        
+    }
+    echo "</tr>";
+}
        ?>
 <!DOCTYPE html>
 <html>
@@ -92,15 +117,17 @@ function gasto() {
 <body>
      
     
-    <div style="max-height: 100%; margin: 1%;" id="tabela" ><table style="width: 100%;" class="table"><?php echo criaTabela2(); ?></table></div>
+    <div style="max-height: 100%; margin: 1%;" id="tabela" ><table style="width: 100%;" class="table">
     
-	<table class="table">
+	
         
-		<tr><td><?php echo desc(); ?></td><td><?php echo data(); ?></td><td><?php echo receita(); ?></td><td><?php echo gasto(); ?></td></tr>
+		<tr><td>Descrição da Atividade: <?php echo desc(); ?></td><td>Data de Inicio: <?php echo data(); ?></td></tr>
+        <tr><th colspan="2">Gastos</th><th colspan="2">Receitas</th> </tr>
+        <tr><td>Descrição</td><td>Valor</td><td>Descrição</td><td>Valor</td></tr>
 		
-        <tr>PRECISA BUSCAR NO BD OS RESUTADOS</tr>
-		<tr>TOTAL R$:</tr>
-	</table>
+        <?php echo criaTabela2(); ?>
+		<tr><td>TOTAL R$:</td></tr>
+	</table></div>
 
 	
 
