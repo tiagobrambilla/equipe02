@@ -1,0 +1,103 @@
+.atividade {
+    z-index: 1;
+    visibility: hidden;
+    opacity: 0;
+    
+}
+
+.atv {
+    width: 0px;
+    height: 0px;
+    opacity: 0;
+}
+
+.atividade:target .atv {
+    height: auto;
+    width: auto;
+    max-height: 80%;
+    max-width: 80%;
+    opacity: 1;
+    transition: opacity .4s linear;
+}
+
+.atividade:target {
+    opacity: 1;
+    visibility: visible;
+    width: 80%;
+    height: 80%;
+    margin-top: 5%;
+    margin-left: 10%;
+    top: 0;
+    left: 0;
+    background: rgb(193, 193, 193);
+    position: fixed;
+}
+
+
+.gasto {
+    z-index: 1;
+    visibility: hidden;
+    opacity: 0;
+}
+
+.gst {
+    width: 0px;
+    height: 0px;
+    opacity: 0;
+}
+
+.gasto:target .gst {
+    height: auto;
+    width: auto;
+    max-height: 80%;
+    max-width: 80%;
+    opacity: 1;
+    transition: opacity .4s linear;
+}
+
+.gasto:target {
+    opacity: 1;
+    visibility: visible;
+    width: 80%;
+    height: 80%;
+    margin-top: 5%;
+    margin-left: 10%;
+    top: 0;
+    left: 0;
+    background: rgb(193, 193, 193);
+    position: fixed;
+}
+
+.receita {
+    z-index: 1;
+    visibility: hidden;
+    opacity: 0;
+}
+
+.rct {
+    width: 0px;
+    height: 0px;
+    opacity: 0;
+}
+
+.receita:target .rct {
+    height: auto;
+    width: auto;
+    max-height: 80%;
+    max-width: 80%;
+    opacity: 1;
+    transition: opacity .4s linear;
+}
+
+.receita:target {
+    opacity: 1;
+    visibility: visible;
+    width: 80%;
+    height: 80%;
+    margin-top: 5%;
+    margin-left: 10%;
+    top: 0;
+    left: 0;
+    background: rgb(193, 193, 193);
+    position: fixed;
+}
