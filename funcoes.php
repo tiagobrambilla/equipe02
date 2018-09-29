@@ -7,14 +7,14 @@ function criaTabela1() {
     $resultado = mysqli_query($bd, $sql);
     while($aux = mysqli_fetch_assoc($resultado)) { 
         
-        echo "<tr>
+        echo "<tr style='height: 62px;'>
         <td><form action='novoGasto.php' method='post'> <input type='hidden' name='escon' id='escon' value='".$aux['id_atividade']."'> <input type='submit' class='btn btn-outline-success' style='margin-left: 10px;' id='botao' value='Novo Gasto'></form></td>
         <td><form action='novaReceita.php' method='post'> <input type='hidden' name='escon' id='escon' value='".$aux['id_atividade']."'> <input type='submit' class='btn btn-outline-success' style='margin-left: 10px;' id='botao' value='Nova Receita'></form></td>
-        <td>".$aux['descr']."&nbsp;&nbsp;&nbsp;  </td>
-        <td> Iniciado em:".$aux['data_inicial']." </td>
+        <td>Atividade : <b>".$aux['descr']."</b>&nbsp;&nbsp;&nbsp;  </td>
+        <td> Iniciado em : ".$aux['data_inicial']." </td>
         <td> &nbsp;&nbsp;&nbsp;Investimento inicial:<spam style='color:red;'> R$".$aux['inv_inicial']."</spam></td>
         <td> <form action='detalhes.php' method='post'> <input type='hidden' name='escon' id='escon' value='".$aux['id_atividade']."'> <input type='submit' class='btn btn-outline-success' style='margin-left: 10px;' id='botao' value='Detalhes'></form></td>
-        <td> <form action='exclui.php' method='post'> <input type='hidden' name='escon' id='escon' value='".$aux['id_atividade']."'> <input type='submit' class='btn btn-outline-success' style='margin-left: 10px;' id='botao' value='Exclui'></form></td>
+        <td> <form action='exclui.php' method='post'> <input type='hidden' name='escon' id='escon' value='".$aux['id_atividade']."'> <input type='submit' class='btn btn-outline-success' style='margin-left: 10px;' id='botao' value='Excluir'></form></td>
         </tr>";
         
     }
@@ -33,6 +33,17 @@ function nome($bd, $sql) {
     }  
     
     return $nome;
+}
+
+function consulta($sql) {
+    $soma = 0;
+    $bd = mysqli_connect("localhost","root","","eq02") or die("Not connected.");
+    $resultado = mysqli_query($bd, $sql);
+    while($aux = mysqli_fetch_assoc($resultado)) { 
+        
+     $soma = $soma + $aux['valor'];
+    }
+    return $soma;
 }
 
 

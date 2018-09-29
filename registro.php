@@ -42,26 +42,6 @@ else {
         }
     }
     
-    if (strtoupper($acao) == "CADASTRAR") {
-        
-        $descr_acao = "CADASTRAR";
-        
-        $sql = " update login
-        set
-        nome = '$nome',
-        password = '$password'
-        where
-        username = '$username' ";
-        
-        if ( ! mysqli_query($bd, $sql) ){
-            $mensagem = "<h3 style='color: red;'>Ocorreu um erro ao alterar os dados</h3>
-            <h3>".mysqli_error($bd)."</h3>".$sql."<h4>".mysqli_errno($bd)."</h4>";
-        }else{
-            $mensagem = "<p style='color: green;'>Dados cadastrados com sucesso!</p>";
-        }
-    }
-    
-    
     if (strtoupper($acao) == "BUSCAR") {
         
         $username = $_POST["username"];

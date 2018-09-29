@@ -1,7 +1,10 @@
+<!DOCTYPE html>
+<html>
 <?php
 include 'validacao.php';
 include 'funcoes.php';
 include 'conexao.php'; 
+
 
 ?>
 <html>
@@ -15,7 +18,7 @@ include 'conexao.php';
     <head>
         <!-- Bootstrap CSS -->
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
-        
+         <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
         <!-- Bibliotecas JavaScript que devem ser incluídas nessa ordem: jQuery.js, Popper.js e Bootstrap JS -->
         <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
@@ -33,7 +36,7 @@ include 'conexao.php';
         <!-- Navigation -->
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" id="mainNav">
             <div class="container">
-                <a style="margin-left: -8%;" class="navbar-brand" href="index.php"><button title="Início" type="button" style="height: 60px; width: 80px; padding-top: 0px" class="btn btn-light btn-lg"><img src="img/home.png"><p>Voltar</p></button></a>
+                <a style="margin-left: -8%;" class="navbar-brand" href="logado.php"><button title="Início" type="button" style="height: 60px; width: 80px; padding-top: 0px" class="btn btn-light btn-lg"><img src="img/home.png"><p>Voltar</p></button></a>
                 <a style="margin-left: 8%;" class="navbar-brand js-scroll-trigger" href="#page-top">Software de Gestão Agrícola</a>
                 <div style="float: left; margin-right: -7%; ">
                     <?php
@@ -50,38 +53,19 @@ include 'conexao.php';
             </div>
         </nav>
         
-        
-        <div style="margin-top: 4%; margin-left: 2.7%;">
-            <br><br><a href="#novaAtividade"> <button  class='btn btn-outline-success my-0 my-sm-0'  ><img src="img/mais.png" width="20px"> &nbsp;Nova Atividade</button></a>
-
-            
-        
-        
-        <a href="consultas.php" style="float: right; margin-right: 2.7%;"> <button  class='btn btn-outline-success my-0 my-sm-0'  ><img src="img/mais.png" width="20px"> &nbsp;Outras Consultas</button></a></div>
         <center>
-            <div style="max-height: 100%; margin: 1%;" id="tabela" ><table style="width: 100%;" class="table"><?php echo criaTabela1(); ?></table></div>
-            
-            
-            <div class="atividade" id="novaAtividade">
-                <div class="atv">
-                    <center>
-                        <fieldset style = "width: 35%; margin-left: 5%; margin-top: 5%;">
-                            <form action="novaAtividade.php" method="post">
-                                
-                                <h5>Descrição da atividade:</h5> <input class="form-control" type="text" name="descr"><br>
-                                <h5>Investimento inicial:</h5> <input class="form-control" type="number" name="inv_inicial"><br>
-                                <h5>Data de inicio:</h5> <input class="form-control" type="date" name="data_inicial"><br>
-                                <h5>Lucro Esperado:</h5> <input class="form-control" type="number" name="lucro_esperado"><br>
-                                <button class="btn btn-danger" onclick="">Cancelar</button>&nbsp;<input class="btn btn-success" type="submit" name="salvar"><br>
-                                <p style="color: green; margin-top: 2%;"><?php echo $msg; ?></p>
-                                
-                            </form>
-                        </fieldset>
-                        
-                    </center>
-                </div>
-            </div>
-        </center>
-    </body>
-    
+     <div style="margin-top: 10%;">
+     	<table style="width: 30%;" class="table table-striped">
+     		<tr><td><h5>Tipo</h5></td><td><h5>Valor Total</h5></td></tr>
+     		<tr><td><b>Adubos</b></td><td>R$<?php echo consulta("select valor from gasto, atividade, login where gasto.id_atividade = atividade.id_atividade and login.username = atividade.username and tipo = 'adubos';")?>,00</td></tr>
+     		<tr><td><b>Contratação de Serviços</b></td><td>R$<?php echo consulta("select valor from gasto, atividade, login where gasto.id_atividade = atividade.id_atividade and login.username = atividade.username and tipo = 'contr';")?>,00</td></tr>
+     		<tr><td><b>Defensivos Agricolas</b></td><td>R$<?php echo consulta("select valor from gasto, atividade, login where gasto.id_atividade = atividade.id_atividade and login.username = atividade.username and tipo = 'def_agri';")?>,00</td></tr>
+     		<tr><td><b>Manutenção</b></td><td>R$<?php echo consulta("select valor from gasto, atividade, login where gasto.id_atividade = atividade.id_atividade and login.username = atividade.username and tipo = 'manutencao';")?>,00</td></tr>
+     		<tr><td><b>Investimento</b></td><td>R$<?php echo consulta("select valor from gasto, atividade, login where gasto.id_atividade = atividade.id_atividade and login.username = atividade.username and tipo = 'invest';")?>,00</td></tr>
+     		<tr><td><b>Outros</b></td><td>R$<?php echo consulta("select valor from gasto, atividade, login where gasto.id_atividade = atividade.id_atividade and login.username = atividade.username and tipo = 'outros';")?>,00</td></tr>
+     	</table>
+        
+</div>
+      </center>   
+</body>
 </html>

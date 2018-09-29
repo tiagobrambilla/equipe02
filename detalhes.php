@@ -88,13 +88,13 @@ function criaTabela2() {
         
         echo "
         <td style='border: none;'>".$aux['descr']."</td>
-        <td style='border: none; color: red;'>".$aux['valor']."</td>
+        <td style='border: none; color: red;'> ".$aux['valor']."</td>
         ";
        
       $aux2 = mysqli_fetch_assoc($resultado2);
         echo "
         <td style='border: none;'>".$aux2['descr']."</td>
-        <td style='border: none; color: green;'>".$aux2['valor']."</td>";
+        <td style='border: none; color: green;'> ".$aux2['valor']."</td>";
         
     }
     echo "</tr>";
@@ -170,10 +170,8 @@ function in() {
         <!-- Navigation -->
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" id="mainNav">
             <div class="container">
-                <a class="navbar-brand js-scroll-trigger" href="#page-top">Software de Gestão Agrícola</a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
+                <a style="margin-left: -8%;" class="navbar-brand" href="logado.php"><button title="Início" type="button" style="height: 60px; width: 80px; padding-top: 0px" class="btn btn-light btn-lg"><img src="img/home.png"><p>Voltar</p></button></a>
+                <a style="margin-left: 8%;" class="navbar-brand js-scroll-trigger" href="#page-top">Software de Gestão Agrícola</a>
                 <div style="float: left; margin-right: -7%; ">
                     <?php
                     
@@ -189,12 +187,12 @@ function in() {
             </div>
         </nav>
         <center>
-            <div style="margin-top: 5%;">
+            <div style="margin-top: 7%;">
                 <table style="width: 50%;" class="table">
                     
                     <tr><td style="text-align: center; border: none;" colspan="4"><b>Descrição da Atividade:</b> <?php echo desc(); ?>&nbsp;&nbsp; <b>Data de Início:</b> <?php echo data(); ?></td></tr>
                     <tr><th style='text-align: center; border: none;' colspan="2">Gastos:</th><th style='text-align: center; border: none;' colspan="2">Receitas:</th> </tr>
-                    <tr><td style="border: none;" ><b>Descrição</b></td><td style="border: none;"><b>Valor</b></td><td style="border: none;"><b>Descrição</b></td><td style="border: none;"><b>Valor</b></td></tr>
+                    <tr><td style="border: none;" ><b>Descrição</b></td><td style="border: none;"><b>Valor R$</b></td><td style="border: none;"><b>Descrição</b></td><td style="border: none;"><b>Valor R$</b></td></tr>
                     
                     <?php echo criaTabela2(); ?>
                     <tr><td colspan="2"><b>Investiento Inicial:</b>&nbsp;R$&nbsp;<?php echo in(); ?>,00</td><td colspan="2"><b>TOTAL:</b> &nbsp;R$ &nbsp;<?php echo soma(); ?>,00</td></tr>

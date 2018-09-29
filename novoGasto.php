@@ -72,8 +72,9 @@ if (isset($_POST['valor'])) {
                 <h5>Descrição do gasto:</h5> <input class="form-control" type="text" name="descr"><br>
                 <h5>Tipo do gasto:</h5> <select class="form-control" name="tipo">
                 <option value="adubos">Adubos</option>
-                <option value="contr">Contratação de serviços</option>
                 <option value="def_agri">Defensivos agricolas</option>
+                <option value="contr">Contratação de serviços</option>
+                <option value="invest">Investimento</option>
                 <option value="manutencao">Manutenção</option>
                 <option value="outros">Outros</option>
                 </select> <br>
