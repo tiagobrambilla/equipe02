@@ -24,6 +24,8 @@ include 'conexao.php';
         <!-- Bootstrap core CSS -->
         <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
         
+        <link href="css/estilos.css"  rel="stylesheet">
+        
         <title>Software de Gestão Agricola</title>
         <meta charset="utf-8">
     </head>
@@ -37,58 +39,75 @@ include 'conexao.php';
                 </button>
                 <div style="float: left; margin-right: -7%; ">
                     <?php
-            
-                        
-                        if ( ! isset( $_SESSION["username"] ) || $username == "undefined") {
+                    
+                    
+                    if ( ! isset( $_SESSION["username"] ) || $username == "undefined") {
                         header("location:index.php");
                     }else{
-                            $aspa = '"';
+                        $aspa = '"';
                         echo "<spam style='color:white;'>".nome($bd, "select nome from login where username = '$username'")."</spam>&nbsp;&nbsp;&nbsp;<button class='btn btn-primary' onclick=".$aspa."location.href='logoff.php'".$aspa.">Sair</button>";
                     }
                     ?>
                 </div>
             </div>
         </nav>
-        <div style="margin-top: 2%;">
-        <br><br><button class='btn btn-outline-success my-0 my-sm-0' style=" margin-left: 50px; " ><img src="img/mais.png" width="20px"> &nbsp;Nova Atividade</button>
-        </div>
-        <div id="tabela" style="margin: 10%;"><table><?php echo criaTabela(); ?></table></div>
         
-        <div id="novaAtividade">
-            <form action="novaAtividade.php" method="post">
-                Descrição da atividade: <input type="text" name="descr"><br>
-                Investimento inicial: <input type="number" name="inv_inicial"><br>
-                Data de inicio: <input type="date" name="data_inicial"><br>
-                Lucro Esperado: <input type="number" name="lucro_esperado"><br>
-                <button onclick="">cancelar</button><input type="submit" name="salvar"><br>
-                <p style="color: green"><?php echo $msg; ?></p>
-                
-            </form>
+        
+        <div style="margin-top: 2%;">
+            <br><br><a href="#novaAtividade"> <button  class='btn btn-outline-success my-0 my-sm-0' style=" margin-left: 50px; " ><img src="img/mais.png" width="20px"> &nbsp;Nova Atividade</button></a>
+            
+            <a href="#novoGasto"> <button  class='btn btn-outline-success my-0 my-sm-0' style=" margin-left: 50px; " ><img src="img/mais.png" width="20px"> &nbsp;Novo Gasto</button></a>
+            
+            <a href="#novaReceita"> <button  class='btn btn-outline-success my-0 my-sm-0' style=" margin-left: 50px; " ><img src="img/mais.png" width="20px"> &nbsp;Nova Receita</button></a>
         </div>
-        <div id="novoGasto">
-            <form action="novoGasto.php" method="post">
-                Descrição do gasto: <input type="text" name="descr"><br>
-                Tipo do gasto: <select name="tipo">
-                <option value="adubos">Adubos</option>
-                <option value="contr">Contratação de serviços</option>
-                <option value="def_agri">Defensivos agricolas</option>
-                <option value="manutencao">Manutenção</option>
-                <option value="outros">Outros</option>
-                </select> <br>
-                Valor: <input type="number" name="valor"><br>
-                <button onclick="">cancelar</button><input type="submit" name="salvar"><br>
-                <p style="color: green"><?php echo $msg; ?></p>
-                
-            </form>
+        
+        <div style="max-height: 100%; margin: 1%;" id="tabela" ><table><?php echo criaTabela(); ?></table></div>
+        
+        
+        <div class="atividade" id="novaAtividade">
+            <div class="atv">
+                <form action="novaAtividade.php" method="post">
+                    Descrição da atividade: <input type="text" name="descr"><br>
+                    Investimento inicial: <input type="number" name="inv_inicial"><br>
+                    Data de inicio: <input type="date" name="data_inicial"><br>
+                    Lucro Esperado: <input type="number" name="lucro_esperado"><br>
+                    <button onclick="">cancelar</button><input type="submit" name="salvar"><br>
+                    <p style="color: green"><?php echo $msg; ?></p>
+                    
+                </form>
+            </div>
         </div>
-        <div id="novoGasto">
-            <form action="novaReceita.php" method="post">
-                Descrição da receita: <input type="text" name="descr"><br>
-                Valor: <input type="number" name="valor"><br>
-                <button onclick="">cancelar</button><input type="submit" name="salvar"><br>
-                <p style="color: green"><?php echo $msg; ?></p>
-                
-            </form>
+        <div class="gasto" id="novoGasto">
+            <div class="gst">
+                <form action="novoGasto.php" method="post">
+                    Descrição do gasto: <input type="text" name="descr"><br>
+                    Tipo do gasto: <select name="tipo">
+                    <option value="adubos">Adubos</option>
+                    <option value="contr">Contratação de serviços</option>
+                    <option value="def_agri">Defensivos agricolas</option>
+                    <option value="manutencao">Manutenção</option>
+                    <option value="outros">Outros</option>
+                    </select> <br>
+                    Valor: <input type="number" name="valor"><br>
+                    <button onclick="">cancelar</button><input type="submit" name="salvar"><br>
+                    <p style="color: green"><?php echo $msg; ?></p>
+                    
+                </form>
+            </div>
         </div>
+        <div class="receita" id="novaReceita">
+            <div class="rct">
+                <form action="novaReceita.php" method="post">
+                    Descrição da receita: <input type="text" name="descr"><br>
+                    Valor: <input type="number" name="valor"><br>
+                    <button onclick="">cancelar</button><input type="submit" name="salvar"><br>
+                    <p style="color: green"><?php echo $msg; ?></p>
+                    
+                </form>
+            </div>
+        </div>
+        
+        
     </body>
+
 </html>
