@@ -107,7 +107,7 @@ else {
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" id="mainNav">
             <div class="container">
                 
-                <a style="margin-left: -8%;" class="navbar-brand" href="navbar/navbar.php"><button title="Início" type="button" style="height: 60px; width: 80px; padding-top: 0px" class="btn btn-light btn-lg"><img src="img/home.png"><p>Voltar</p></button></a> 
+                <a style="margin-left: -8%;" class="navbar-brand" href="index.php"><button title="Início" type="button" style="height: 60px; width: 80px; padding-top: 0px" class="btn btn-light btn-lg"><img src="img/home.png"><p>Voltar</p></button></a> 
                 <a style="margin-right: 38%;" class="navbar-brand js-scroll-trigger" href="#page-top">Software de Gestão Agrícola</a>
             </div>
         </nav>
