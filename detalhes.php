@@ -82,10 +82,12 @@ function criaTabela2() {
     $bd = mysqli_connect("localhost","root","","eq02") or die("Not connected.");
     $resultado2 = mysqli_query($bd, $sql2);
     $resultado = mysqli_query($bd, $sql);
-    for($x=0; $x<10; $x++) {
-        echo "<tr>";
-    $aux = mysqli_fetch_assoc($resultado);
+    
+    for ($i=0; $i < 10; $i++) { 
         
+   
+    $aux = mysqli_fetch_assoc($resultado);
+         echo "<tr>";
         echo "
         <td style='border: none;'>".$aux['descr']."</td>
         <td style='border: none; color: red;'> ".$aux['valor']."</td>
@@ -95,9 +97,9 @@ function criaTabela2() {
         echo "
         <td style='border: none;'>".$aux2['descr']."</td>
         <td style='border: none; color: green;'> ".$aux2['valor']."</td>";
-        
-    }
-    echo "</tr>";
+        echo "</tr>";
+     }
+    
 }
 
 
@@ -130,7 +132,12 @@ function soma() {
     }
     
     $total = $somaReceita - $somaGasto - $in;
-    return $total;
+    if ($total >= 0) {
+        $totalc = "<spam style='color:green;'>R$ ".$total.",00</spam>";
+     } else {
+        $totalc = "<spam style='color:red;'>R$ ".$total.",00</spam>";
+     }
+     return $totalc;
 }
 
 function in() {
@@ -195,7 +202,7 @@ function in() {
                     <tr><td style="border: none;" ><b>Descrição</b></td><td style="border: none;"><b>Valor R$</b></td><td style="border: none;"><b>Descrição</b></td><td style="border: none;"><b>Valor R$</b></td></tr>
                     
                     <?php echo criaTabela2(); ?>
-                    <tr><td colspan="2"><b>Investiento Inicial:</b>&nbsp;R$&nbsp;<?php echo in(); ?>,00</td><td colspan="2"><b>TOTAL:</b> &nbsp;R$ &nbsp;<?php echo soma(); ?>,00</td></tr>
+                    <tr><td colspan="2"><b> Investiento Inicial:</b><spam style='color:red;'>&nbsp;R$&nbsp;<?php echo in(); ?>,00</spam></td><td colspan="2"><b>TOTAL:</b> &nbsp;<?php echo soma(); ?></td></tr>
                     
                 </table>
             </div>

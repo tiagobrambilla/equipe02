@@ -9,7 +9,7 @@ if (isset($_POST["escon"]))
 {
     $id_atividade = $_POST["escon"];
 }
-if (isset($_POST['valor'])) {
+if (isset($_POST['descr'])) {
     include 'validacao.php';
     $bd = mysqli_connect("localhost","root","","eq02");
     $username = $_SESSION['username'];
@@ -17,9 +17,9 @@ if (isset($_POST['valor'])) {
     $descr = $_POST['descr'];
     $tipo = $_POST['tipo'];
     $valor = $_POST['valor'];
-    
+    if ($descr != ""){
     $sql = "insert into gasto (descr, tipo, valor, id_atividade) values('$descr', '$tipo', '$valor', '$id_atividade')";
-    
+    }
     mysqli_query($bd, $sql);
     
     header('location: logado.php?mensagem=Dados Salvos');
@@ -79,7 +79,7 @@ if (isset($_POST['valor'])) {
                 <option value="outros">Outros</option>
                 </select> <br>
                 <h5>Valor:</h5> <input class="form-control" type="number" name="valor"><br>
-                <button class="btn btn-danger" onclick="">Cancelar</button>&nbsp;<input class="btn btn-success" type="submit" name="salvar"><br>
+                <button class="btn btn-danger" onclick="location.href='logado.php'">Cancelar</button>&nbsp;<input class="btn btn-success" type="submit" name="salvar"><br>
                 <p style="color: green; margin-top: 2%;"><?php echo $msg; ?></p>
                 
             </form>

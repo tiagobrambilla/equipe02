@@ -15,6 +15,7 @@ if (isset($_POST['valor'])) {
     $id_atividade = $_POST['id_atividade'];
     $descr = $_POST['descr'];
     $valor = $_POST['valor'];
+     if ($descr != "")
     $sql = "insert into receita (descr, valor, id_atividade) values('$descr', '$valor', '$id_atividade')";
     
     mysqli_query($bd, $sql);
